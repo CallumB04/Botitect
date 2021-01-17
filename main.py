@@ -2,9 +2,14 @@ import discord
 from discord.ext import commands
 from discord.ext.commands import Bot
 import asyncio
+import json
 
 bot = commands.Bot(command_prefix="$")
-TOKEN = "ODAwMTk5OTQ3MDEzOTgwMjIw.YAOqRg._Oo93HO3mso7DDwR8SDUSqq_uOk"
+
+with open("C:\\Users\\toure\\Coding\\Python\\Botitect\\botinfo.json", "r") as f:
+    info = json.load(f)
+
+    TOKEN = info["bot_token"]
 
 @bot.event
 async def on_ready():
